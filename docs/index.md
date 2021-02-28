@@ -111,20 +111,20 @@ $touch index.ts
 </div></div>
 <p>Para realizar nuestro primer <em>hola mundo</em>, primero debemos escribir las siguientes líneas de código en el fichero que acabamos de crear,guardamos y podemos ejecutarlo con <code>tsc</code>.</p>
 
-<code>
+```JavaScript
 let myString: string = "Hola Mundo";
 console.log(myString);
-</code>
+```
 
 <p>Se crea automáticamente el directorio dist y un fichero llamado index.js. Vemos las diferencias que tienen:</p>
-~~~
+```
 $diff src/index.ts dist/index.js 
 1c1
 < let myString: string = "Hola Mundo";
 ---
 > let myString = "Hola Mundo";
 
-~~~
+```
 
 <p>La diferencia se encuentra en la declaración de la variable myString. Una de las principales funcionalidades de TypeScript es que utiliza tipos para tratar de evitar los problemas que surgen con JavaScript, el cual no es un lenguaje tipado.</p>
 <p>Ejecutamos el codigo JS generado a partir del código TypeScript mediante el siguiente comando:</p>
