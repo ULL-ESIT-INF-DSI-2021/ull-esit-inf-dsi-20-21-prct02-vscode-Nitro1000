@@ -26,7 +26,7 @@ E: No se ha podido localizar el paquete code
 ```
 
 <p>Si ocurre este error de no localizar el paquete, podemos probar con snap. El comando seria el siguiente:</p>
-```Bash $ sudo snap install code --classic```
+```$ sudo snap install code --classic```
 
   
 ### Configuración de Visual Studio Code para conectarse a una máquina remota por SSH<a name="id3"></a>
@@ -34,7 +34,7 @@ E: No se ha podido localizar el paquete code
 <p>Tenemos que poder conectarnos desde VScode a nuestra maquina virtual mediante una extencion llamada <a href="https://code.visualstudio.com/docs/remote/ssh-tutorial" rel="nofollow">Remote - SSH</a>. Para instalarla podemos buscarla en el apartado de extenciones/plugins en el lateral izquierdo de la aplicación.</p>
 ![Icono de Remote-SSH](https://code.visualstudio.com/assets/docs/remote/ssh-tutorial/remote-ssh-extension.png)
 <p>Ya instalada la extención nos conectamos a la VPN de la ULL (en caso de no estar en la red universitaria), ahora precionamos <code>F1</code> y escribimos <code>ssh</code>, nos aparece la opción <code>SSH-Remote: Connect to host</code> en el caso de que no aparezca el nombre de la maquina virtual, tenemos que acceder al fichero 
- `~/.ssh/config` y agregar lo siguiente:</p>
+ ~/.ssh/config y agregar lo siguiente:</p>
 
 ```
 Host iaas-dsi2
