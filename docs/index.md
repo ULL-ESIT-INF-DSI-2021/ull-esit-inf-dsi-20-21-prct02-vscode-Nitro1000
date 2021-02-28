@@ -6,7 +6,6 @@
 2. [Instalación y funcionalidad de Visual Studio Code](#id2)
 3. [Configuración de Visual Studio Code para conectarse a una máquina remota por SSH](#id3)
 4. [Primer proyecto en TypeScript: “Hola Mundo”](#id4)
-5. 
 
 ## Introducción<a name="id1"></a>
 
