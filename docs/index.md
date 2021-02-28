@@ -14,9 +14,7 @@
 ### Instalación y funcionalidad de Visual Studio Code<a name="id2"></a>
 
 <p>Lo primero que deberemos hacer será instalar VScode en nuestra máquina local. En la local se puede hacer de varias maneras, por ejemplo: linea de comandos, desde la pagina oficial de VScode, desde la tienda de aplicaciones de la distro linux que tengamos, etc. En este caso se hara por linea de comandos en Ubuntu:</p>
-<div class="language-bash highlighter-rouge">
-<div class="highlight">
-<code"language-bash highlighter-rouge">
+<code class="language-bash highlighter-rouge">
 $ sudo apt install code
 [sudo] contraseña para usuario: 
 Leyendo lista de paquetes... Hecho
