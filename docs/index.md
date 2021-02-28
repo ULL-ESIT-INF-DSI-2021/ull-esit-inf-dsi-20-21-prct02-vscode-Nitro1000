@@ -15,8 +15,8 @@
 
 <p>Lo primero que deberemos hacer será instalar VScode en nuestra máquina local. En la local se puede hacer de varias maneras, por ejemplo: linea de comandos, desde la pagina oficial de VScode, desde la tienda de aplicaciones de la distro linux que tengamos, etc. En este caso se hara por linea de comandos en Ubuntu:</p>
 <div class="language-bash highlighter-rouge">
-<div class="highlight"><pre class="highlight">
-<code>
+<div class="highlight">
+<code"language-bash highlighter-rouge">
 $ sudo apt install code
 [sudo] contraseña para usuario: 
 Leyendo lista de paquetes... Hecho
@@ -26,11 +26,12 @@ No hay un paquete apt "code", pero hay un snap con ese nombre.
 Intente «snap install code»
 E: No se ha podido localizar el paquete code
 </code>
+
 </div>
 </div>
 <p>Si ocurre este error de no localizar el paquete, podemos probar con snap. El comando seria el siguiente:</p>
 <div class="language-bash highlighter-rouge">
-<div class="highlight"><pre class="highlight">
+<div class="highlight">
 <code> $ sudo snap install code --classic</code>
 </div></div>
   
@@ -40,7 +41,7 @@ E: No se ha podido localizar el paquete code
 ![Icono de Remote-SSH](https://code.visualstudio.com/assets/docs/remote/ssh-tutorial/remote-ssh-extension.png)
 <p>Ya instalada la extención nos conectamos a la VPN de la ULL (en caso de no estar en la red universitaria), ahora precionamos <code>F1</code> y escribimos <code>ssh</code>, nos aparece la opción <code>SSH-Remote: Connect to host</code> en el caso de que no aparezca el nombre de la maquina virtual, tenemos que acceder al fichero <code>~/.ssh/config</code> y agregar lo siguiente:</p>
 <div class="language-bash highlighter-rouge">
-<div class="highlight"><pre class="highlight">
+<div class="highlight">
 <code>
 Host iaas-dsi2
   HostName iaas-dsi2
@@ -58,7 +59,7 @@ Host iaas-dsi2
 </p> 
 
 <div class="language-bash highlighter-rouge">
-<div class="highlight"><pre class="highlight">
+<div class="highlight">
 <code>
 $npm install --global typescript
 added 1 package, and audited 2 packages in 5s
@@ -68,7 +69,7 @@ found 0 vulnerabilities
 
 <p>Ahora podemos empezar a desarrollar el primer proyecto, haremos lo siguiente:</p>
 <div class="language-bash highlighter-rouge">
-<div class="highlight"><pre class="highlight">
+<div class="highlight">
 <code>
 $mkdir hello-world
 $cd hello-world/
@@ -97,7 +98,7 @@ proyecto actual.</p>
 la opción <code class="language-bash highlighter-rouge">Add Folder to Workspace...</code>. Seleccione <code class="language-bash highlighter-rouge">hello-world</code> en el menú desplegable. Si no tenía un espacio de trabajo creado previamente, se creará uno nuevo y se añadirá el directorio al mismo. Guarde el espacio de trabajo seleccionando la opción <code class="language-bash highlighter-rouge">Save Workspace As...</code> del menú <code class="language-plaintext highlighter-rouge">File</code>, escriba un nombre de fichero y pulse el botón <code class="language-bash highlighter-rouge">OK</code>.</p>
 <p>Dentro del directorio hello_world se crea un fichero llamado tsconfig.json al que le añadiremos lo siguiente:</p>
 <div class="language-bash highlighter-rouge">
-<div class="highlight"><pre class="highlight">
+<div class="highlight">
 <code>
 {
   "compilerOptions": {
@@ -112,7 +113,7 @@ la opción <code class="language-bash highlighter-rouge">Add Folder to Workspace
 <p>target: Es para generar código compatible con uno de los últimos estándares de JavaScript. outDir: El código JavaScript producto de la compilación se almacenará en un directorio <code class="language-plaintext highlighter-rouge">dist</code>. rootDir: Especificamos que el código fuente escrito en TypeScript se encuentra en el directorio <code class="language-plaintext highlighter-rouge">src</code>. module: Se indica un estándar para cargar código desde ficheros independientes.</p>
 <p>Ahora, añadiremos un fichero con código TypeScript. Ejecute los siguientes comandos en la terminal de VSCode en la carpeta hello-world:</p>
 <div class="language-bash highlighter-rouge">
-<div class="highlight"><pre class="highlight">
+<div class="highlight">
 <code>
 $mkdir src
 $cd src
@@ -121,7 +122,7 @@ $touch index.ts
 </div></div>
 <p>Para realizar nuestro primer <em>hola mundo</em>, primero debemos escribir las siguientes líneas de código en el fichero que acabamos de crear,guardamos y podemos ejecutarlo con <code>tsc</code>.</p>
 <div class="language-typescript highlighter-rouge">
-<div class="highlight"><pre class="highlight">
+<div class="highlight">
 <code>
 let myString: string = "Hola Mundo";
 console.log(myString);
@@ -129,7 +130,7 @@ console.log(myString);
 </div></div>
 <p>Se crea automáticamente el directorio dist y un fichero llamado index.js. Vemos las diferencias que tienen:</p>
 <div class="language-typescript highlighter-rouge">
-<div class="highlight"><pre class="highlight">
+<div class="highlight">
 <code>
 $diff src/index.ts dist/index.js 
 1c1
@@ -141,7 +142,7 @@ $diff src/index.ts dist/index.js
 <p>La diferencia se encuentra en la declaración de la variable myString. Una de las principales funcionalidades de TypeScript es que utiliza tipos para tratar de evitar los problemas que surgen con JavaScript, el cual no es un lenguaje tipado.</p>
 <p>Ejecutamos el codigo JS generado a partir del código TypeScript mediante el siguiente comando:</p>
 <div class="language-typescript highlighter-rouge">
-<div class="highlight"><pre class="highlight">
+<div class="highlight">
 <code>
 $node dist/index.js
 Hola Mundo
