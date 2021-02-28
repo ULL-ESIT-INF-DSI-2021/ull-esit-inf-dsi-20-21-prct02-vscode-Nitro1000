@@ -14,7 +14,7 @@
 ### Instalación y funcionalidad de Visual Studio Code<a name="id2"></a>
 
 <p>Lo primero que deberemos hacer será instalar VScode en nuestra máquina local. En la local se puede hacer de varias maneras, por ejemplo: linea de comandos, desde la pagina oficial de VScode, desde la tienda de aplicaciones de la distro linux que tengamos, etc. En este caso se hara por linea de comandos en Ubuntu:</p>
-<code>
+```Bash
 $ sudo apt install code
 [sudo] contraseña para usuario: 
 Leyendo lista de paquetes... Hecho
@@ -23,23 +23,24 @@ Leyendo la información de estado... Hecho
 No hay un paquete apt "code", pero hay un snap con ese nombre.
 Intente «snap install code»
 E: No se ha podido localizar el paquete code
-</code>
+```
 
 <p>Si ocurre este error de no localizar el paquete, podemos probar con snap. El comando seria el siguiente:</p>
-<code> $ sudo snap install code --classic</code>
+```Bash $ sudo snap install code --classic```
 
   
 ### Configuración de Visual Studio Code para conectarse a una máquina remota por SSH<a name="id3"></a>
 
 <p>Tenemos que poder conectarnos desde VScode a nuestra maquina virtual mediante una extencion llamada <a href="https://code.visualstudio.com/docs/remote/ssh-tutorial" rel="nofollow">Remote - SSH</a>. Para instalarla podemos buscarla en el apartado de extenciones/plugins en el lateral izquierdo de la aplicación.</p>
 ![Icono de Remote-SSH](https://code.visualstudio.com/assets/docs/remote/ssh-tutorial/remote-ssh-extension.png)
-<p>Ya instalada la extención nos conectamos a la VPN de la ULL (en caso de no estar en la red universitaria), ahora precionamos <code>F1</code> y escribimos <code>ssh</code>, nos aparece la opción <code>SSH-Remote: Connect to host</code> en el caso de que no aparezca el nombre de la maquina virtual, tenemos que acceder al fichero <code>~/.ssh/config</code> y agregar lo siguiente:</p>
+<p>Ya instalada la extención nos conectamos a la VPN de la ULL (en caso de no estar en la red universitaria), ahora precionamos <code>F1</code> y escribimos <code>ssh</code>, nos aparece la opción <code>SSH-Remote: Connect to host</code> en el caso de que no aparezca el nombre de la maquina virtual, tenemos que acceder al fichero 
+ `~/.ssh/config` y agregar lo siguiente:</p>
 
-<code>
+```
 Host iaas-dsi2
   HostName iaas-dsi2
   User usuario
-</code>
+```
 
 <p>Una vez hecho esto, nos aparecera la maquina virtual y nos podremos conectar por ssh.</p>
   
@@ -51,16 +52,16 @@ Host iaas-dsi2
  Ahora, lo que haremos será instalar el compilador de TypeScript. Para ello, usaremos npm:
 </p> 
 
-<code>
+```Bash
 $npm install --global typescript
 added 1 package, and audited 2 packages in 5s
 found 0 vulnerabilities
-</code>
+```
 
 
 <p>Ahora podemos empezar a desarrollar el primer proyecto, haremos lo siguiente:</p>
 
-<code>
+```JavaScript
 $mkdir hello-world
 $cd hello-world/
 $npm init --yes
@@ -78,7 +79,7 @@ Wrote to /home/usuario/hello-world/package.json:
   "author": "",
   "license": "ISC"
 }
-</code>
+```
 
 <p>El comando <code class="language-bash highlighter-rouge">npm init --yes</code> permite crear un fichero denominado <code class="language-bash highlighter-rouge">package.json</code>, el cual se utiliza, entre otras cosas,
 para establecer las dependencias de desarrollo y ejecución del proyecto a modo de paquetes de los que depende el
@@ -88,7 +89,7 @@ proyecto actual.</p>
 la opción <code class="language-bash highlighter-rouge">Add Folder to Workspace...</code>. Seleccione <code class="language-bash highlighter-rouge">hello-world</code> en el menú desplegable. Si no tenía un espacio de trabajo creado previamente, se creará uno nuevo y se añadirá el directorio al mismo. Guarde el espacio de trabajo seleccionando la opción <code class="language-bash highlighter-rouge">Save Workspace As...</code> del menú <code class="language-plaintext highlighter-rouge">File</code>, escriba un nombre de fichero y pulse el botón <code class="language-bash highlighter-rouge">OK</code>.</p>
 <p>Dentro del directorio hello_world se crea un fichero llamado tsconfig.json al que le añadiremos lo siguiente:</p>
 
-<code>
+```JavaScript
 {
   "compilerOptions": {
     "target": "ES2018",
@@ -97,18 +98,17 @@ la opción <code class="language-bash highlighter-rouge">Add Folder to Workspace
     "module": "CommonJS"
   }
 }
-</code>
+```
 
 <p>target: Es para generar código compatible con uno de los últimos estándares de JavaScript. outDir: El código JavaScript producto de la compilación se almacenará en un directorio <code class="language-plaintext highlighter-rouge">dist</code>. rootDir: Especificamos que el código fuente escrito en TypeScript se encuentra en el directorio <code class="language-plaintext highlighter-rouge">src</code>. module: Se indica un estándar para cargar código desde ficheros independientes.</p>
 <p>Ahora, añadiremos un fichero con código TypeScript. Ejecute los siguientes comandos en la terminal de VSCode en la carpeta hello-world:</p>
-<div class="language-bash highlighter-rouge">
-<div class="highlight">
-<code>
+
+```
 $mkdir src
 $cd src
 $touch index.ts
-</code>
-</div></div>
+```
+
 <p>Para realizar nuestro primer <em>hola mundo</em>, primero debemos escribir las siguientes líneas de código en el fichero que acabamos de crear,guardamos y podemos ejecutarlo con <code>tsc</code>.</p>
 
 ```JavaScript
